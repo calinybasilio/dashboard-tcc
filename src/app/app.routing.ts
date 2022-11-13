@@ -6,14 +6,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes = [
-  {
-    path: '**',
-    redirectTo: 'dashboard'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'dashboard'
+  // },
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
+  },
+  {
+    path: 'auth',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule)
+      }
+    ]
   },
   {
     path: '',
