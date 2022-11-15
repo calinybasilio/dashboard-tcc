@@ -29,7 +29,7 @@ export class UserService {
             this.loadDataSession();
         }
         return UserService.dataSession && !!UserService.dataSession.token
-            && (new Date(UserService.dataSession.expiresIn) > new Date()) && !!UserService.dataSession.usuario;
+            && (new Date(UserService.dataSession.expiresIn) > new Date()) && !!UserService.dataSession.user;
     }
 
     setdataSession(dataSession: ILoginResult) {

@@ -2,10 +2,15 @@ declare var $: any;
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ENotificationType } from 'app/core/enums/notification-type.enum';
+import { IAuthenticateBody } from 'app/core/interfaces/authenticate-body-interface';
+import { ILoginResult } from 'app/core/interfaces/login-result';
 
 import { INotificationInfo } from 'app/core/interfaces/notification-info.interface';
+import { AuthService } from 'app/core/services/auth.service';
+import { UserService } from 'app/core/services/user.service';
 
 @Component({
   selector: 'app-auth-login',
@@ -18,6 +23,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly _formBuilder: FormBuilder,
+    private readonly _authService: AuthService,
+    private readonly _userService: UserService,
+    private readonly _router: Router
   ) {
     this.formGroup = this._formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
@@ -31,22 +39,22 @@ export class LoginComponent implements OnInit {
     this.formGroup.markAllAsTouched();
 
     if (this.formGroup.valid) {
-      //   const parametros: Autenticar = this.formGroup.value;
-      //   this._autenticacaoService.postAuthenticate(parametros).subscribe((res: any) => {
-      //     this._usuarioLogadoService.setDadosSession(res);
-      //     this._router.navigate(['/']);
-      //   }, (err: any) => {
-      //     this._toastService.error(err.error && err.error.message ? err.error.message : 'Dados inválidos!',
-      //       err.error && err.error.error ? err.error.error : "Autenticação inválida", {
-      //       timeOut: 3000,
-      //     });
-      //   });
-      // } else {
-      //   Utilitarios.validateAllFormFields(this.formGroup);
-      //   this._toastService.error("Por favor preencha corretamente as informações", 'Formulário inválido!', {
-      //     timeOut: 3000
-      //   });
-      
+        const parametros: IAuthenticateBody = this.formGroup.value;
+        this._authService.login(parametros).subscribe({
+          next: (res: ILoginResult) => {
+            this._userService.setdataSession(res);
+            this._router.navigate(['/']);
+          },
+          error:  (err: any) => {
+            this.showNotification({
+              type: ENotificationType.DANGER,
+              align: 'right',
+              from: 'top',
+              icon: "pe-7s-close-circle",
+              message: err.error && err.error.error ? err.error.error : "Autenticação inválida"
+            });
+          }
+        });
     } else {
       this.showNotification({
         type: ENotificationType.DANGER,
