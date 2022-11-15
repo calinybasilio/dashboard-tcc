@@ -3,9 +3,9 @@ declare var $: any;
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ENotificationType } from 'app/shared/enums/notification-type.enum';
+import { ENotificationType } from 'app/core/enums/notification-type.enum';
 
-import { INotificationInfo } from 'app/shared/interfaces/notification-info.interface';
+import { INotificationInfo } from 'app/core/interfaces/notification-info.interface';
 
 @Component({
   selector: 'app-auth-login',

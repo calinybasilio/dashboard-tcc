@@ -6,14 +6,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes = [
-  // {
-  //   path: '**',
-  //   redirectTo: 'dashboard'
-  // },
   {
     path: '',
-    redirectTo: 'dashboard',
     pathMatch: 'full',
+    redirectTo: 'dashboard',
   },
   {
     path: 'auth',

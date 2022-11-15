@@ -9,7 +9,7 @@ import { AuthRoutes } from './auth.routing';
 
 import { LoginComponent } from './login/login.component';
 
-import { LoginGuard } from 'app/shared/guards/login.guard';
+import { LoginGuard } from 'app/core/guards/login.guard';
 
 @NgModule({
   imports: [
