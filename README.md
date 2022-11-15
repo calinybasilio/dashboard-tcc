@@ -1,4 +1,4 @@
-# [Projeto Dashboard TCC]
+# Projeto Dashboard TCC
 
 [![version][version-badge]][CHANGELOG] ![license][license-badge]
 
