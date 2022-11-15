@@ -1,7 +1,4 @@
-# [Projeto Dashboard TCC]
-
-[![version][version-badge]][CHANGELOG] ![license][license-badge]
-
+# Projeto Dashboard TCC
 
 ## Template utilizado:
 

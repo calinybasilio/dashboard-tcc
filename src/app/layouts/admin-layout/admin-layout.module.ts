@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { LbdModule } from '../../lbd/lbd.module';
 import { NguiMapModule} from '@ngui/map';
@@ -16,7 +16,9 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { NotFoundComponent } from 'app/not-found/not-found.component';
 
+import { DashboardGuard } from 'app/core/guards/dashboard.guard';
 
 @NgModule({
   imports: [
@@ -34,8 +36,11 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent
+    UpgradeComponent,
+    NotFoundComponent
+  ],
+  providers:[
+    DashboardGuard
   ]
 })
-
 export class AdminLayoutModule {}

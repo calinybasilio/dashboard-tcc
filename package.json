@@ -38,6 +38,7 @@
         "core-js": "3.8.1",
         "googleapis": "66.0.0",
         "jquery": "3.5.1",
+        "ngx-loading": "^2.0.1",
         "perfect-scrollbar": "1.5.0",
         "rxjs": "^7.5.5",
         "zone.js": "~0.11.5"
