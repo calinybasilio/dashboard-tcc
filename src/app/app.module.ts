@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { ErroInputModule } from './shared/erro-input/erro-input.module';
 
 import { AppComponent } from './app.component';
 
@@ -22,6 +23,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     NavbarModule,
     FooterModule,
     SidebarModule,
+    ErroInputModule,
     AppRoutingModule
   ],
   declarations: [

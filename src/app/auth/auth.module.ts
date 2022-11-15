@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ErroInputModule } from 'app/shared/erro-input/erro-input.module';
 
 import { AuthRoutes } from './auth.routing';
 
@@ -11,7 +13,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     CommonModule,
     RouterModule.forChild(AuthRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    ErroInputModule
   ],
   declarations: [
     LoginComponent
