@@ -1,8 +1,5 @@
 # Projeto Dashboard TCC
 
-[![version][version-badge]][CHANGELOG] ![license][license-badge]
-
-
 ## Template utilizado:
 
 **[Light Bootstrap Dashboard Angular](https://demos.creative-tim.com/light-bootstrap-dashboard-angular2/dashboard)** é um modelo de painel de administração projetado para ser bonito e simples. Ele é construído em cima do Bootstrap 3 e é totalmente responsivo. Ele vem com uma grande coleção de elementos que oferecem várias possibilidades para criar o aplicativo que melhor se adapta às suas necessidades. Ele pode ser usado para criar painéis administrativos, sistemas de gerenciamento de projetos.
