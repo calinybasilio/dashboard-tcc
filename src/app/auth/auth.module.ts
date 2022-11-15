@@ -9,6 +9,8 @@ import { AuthRoutes } from './auth.routing';
 
 import { LoginComponent } from './login/login.component';
 
+import { LoginGuard } from 'app/shared/guards/login.guard';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { LoginComponent } from './login/login.component';
   ],
   declarations: [
     LoginComponent
-  ]
+  ],
+  providers: [LoginGuard],
 })
 export class AuthModule { }
