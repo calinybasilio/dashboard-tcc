@@ -1,12 +1,8 @@
+@import '../../../assets/sass/lbd/variables';
+
 :host {
     .wrapper {
-        background: #007bff;
-        background: linear-gradient(to right, #0062E6, #33AEFF);
-    }
-
-    .panel-heading {
-        display: flex;
-        justify-content: center;
+        background: $color-black;
     }
 
     .container {
@@ -17,18 +13,44 @@
 
         .row {
             width: 100%;
+            min-height: 50%;
             display: flex;
             justify-content: center;
         }
     }
 
-    .buttons-section {
+    .panel-login {
+        height: 100%;
+        border: 10px solid #fff;
+        border-radius: 10px;
         display: flex;
-        justify-content: center;
-        margin: 25px 0px 15px 0px;
+        flex-direction: column;
+        justify-content: space-around;
+        background: #fff;
+        align-items: center;
+        padding: 0px 15px 0px 15px;
 
-        .btn-login {
-            width: 30rem;
+        .body-panel {
+            width: 100%;
+
+            .buttons-section {
+                display: flex;
+                justify-content: center;
+                margin: 25px 0px 15px 0px;
+
+                .btn-login {
+                    width: 30rem;
+                }
+            }
         }
+
+        .footer-panel {
+            p {
+                text-align: center;
+            }
+        }
+
     }
+
+
 }
