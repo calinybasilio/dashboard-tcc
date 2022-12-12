@@ -1,16 +1,18 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <ngx-chartjs-bar [title]="'Teste barras chartjs'" [subtitle]="'Teste barras chartjs'"
-                    [footerIconClass]="'fa fa-clock-o'" [footerText]="'Teste barras chartjs'"></ngx-chartjs-bar>
+            <div class="col-md-12" *ngIf="wordFrequencyPolarAreaData">
+                <ngx-chartjs-polar-area [chartData]="wordFrequencyPolarAreaData" [title]="'Incidência de Palavras'"
+                    [subtitle]="'Incidência das 10 palavras mais utilizadas nos tweets.'" [footerIconClass]="'fa fa-clock-o'"
+                    [footerText]="''">
+                </ngx-chartjs-polar-area>
             </div>
             <div class="col-md-6">
                 <ngx-chartjs-line [title]="'Teste lines chartjs'" [subtitle]="'Teste lines chartjs'"
                     [footerIconClass]="'fa fa-clock-o'" [footerText]="'Teste lines chartjs'"></ngx-chartjs-line>
             </div>
         </div>
-       
+
         <div class="row">
             <div class="col-md-6">
                 <lbd-chart [title]="'2021 Sales'" [subtitle]="'All products including Taxes'"

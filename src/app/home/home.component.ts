@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
+import { DashboardService } from 'app/core/services/dashboard.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import * as Chartist from 'chartist';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public wordFrequencyPolarAreaData: any;
+
   public emailChartType: ChartType;
   public emailChartData: any;
   public emailChartLegendItems: LegendItem[];
@@ -24,9 +27,13 @@ export class HomeComponent implements OnInit {
   public activityChartResponsive: any[];
   public activityChartLegendItems: LegendItem[];
   
-  constructor() {}
+  constructor(
+    private _dashBoardService: DashboardService
+  ) {}
 
   ngOnInit() {
+    this.wordFrequencyPolarAreaData = this._dashBoardService.wordFrequencyPolarArea();
+
     this.emailChartType = ChartType.Pie;
     this.emailChartData = {
       labels: ['62%', '32%', '6%'],

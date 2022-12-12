@@ -7,7 +7,7 @@ import { ChartModule } from 'angular2-chartjs';
 import { LbdChartComponent } from './lbd-chart/lbd-chart.component';
 import { ChartjsBarComponent } from './chartjs/chartjs-bar/chartjs-bar.component';
 import { ChartjsLineComponent } from './chartjs/chartjs-line/chartjs-line.component';
-
+import { ChartJsPolarAreaComponent } from './chartjs/chartjs-polar-area/chartjs-polar-area.component';
 
 @NgModule({
   imports: [
@@ -16,15 +16,16 @@ import { ChartjsLineComponent } from './chartjs/chartjs-line/chartjs-line.compon
     ChartModule
   ],
   declarations: [
-
     LbdChartComponent,
     ChartjsBarComponent,
-    ChartjsLineComponent
+    ChartjsLineComponent,
+    ChartJsPolarAreaComponent
   ],
   exports: [
     LbdChartComponent,
     ChartjsBarComponent,
-    ChartjsLineComponent
+    ChartjsLineComponent,
+    ChartJsPolarAreaComponent
   ]
 })
 export class LbdModule { }
