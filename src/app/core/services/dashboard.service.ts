@@ -24,8 +24,27 @@ export class DashboardService {
             datasetReturn.data.push(word.count);
         });
 
-        debugger
-        return datasetReturn;
+        return {
+            labels: datasetReturn.labels,
+            datasets: [
+              {
+                label: 'Incidência',
+                data: datasetReturn.data,
+                backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(75, 192, 192)',
+                  'rgb(255, 205, 86)',
+                  'rgb(201, 203, 207)',
+                  'rgb(54, 162, 235)',
+                  'rgb(22, 99, 132)',
+                  'rgb(44, 192, 192)',
+                  'rgb(77, 205, 86)',
+                  'rgb(99, 203, 207)',
+                  'rgb(112, 162, 235)'
+                ]
+              }
+            ]
+          };
     }
 
     numberJournalistsByLocationBar() {
@@ -41,22 +60,16 @@ export class DashboardService {
         });
 
         const retorno =  {
-            labels: [],
+            labels: [mapLocalitiesName[ELocalities.BELO_HORIZONTE], mapLocalitiesName[ELocalities.MONTEVIDEO]],
             datasets: [
                 {
-                    label: mapLocalitiesName[ELocalities.BELO_HORIZONTE],
-                    data: [countBh],
-                    backgroundColor: 'blue'
-                },
-                {
-                    label: mapLocalitiesName[ELocalities.MONTEVIDEO],
-                    data: [countMv],
-                    backgroundColor: 'limegreen'
+                    label: '',
+                    data: [countBh, countMv],
+                    backgroundColor:  'rgb(75, 192, 192)',
                 }
             ]
         };
 
-console.log('retorno', retorno);
         return retorno;
     }
 
