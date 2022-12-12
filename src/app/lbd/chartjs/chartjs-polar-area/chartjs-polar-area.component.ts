@@ -46,17 +46,18 @@ export class ChartJsPolarAreaComponent implements OnDestroy {
 
     this.options = {
       responsive: true,
-      // scales: {
-      //   r: {
-      //     pointLabels: {
-      //       display: true,
-      //       centerPointLabels: true,
-      //       font: {
-      //         size: 18
-      //       }
-      //     }
-      //   }
-      // },
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          pointLabels: {
+            display: true,
+            centerPointLabels: true,
+            font: {
+              size: 18
+            }
+          }
+        }
+      },
       plugins: {
         legend: {
           position: 'top',

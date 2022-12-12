@@ -44,7 +44,9 @@ export class ChartjsBarComponent implements OnDestroy {
     };
 
     this.options = {
-      
+      responsive: true,
+      maintainAspectRatio: false,
+
         aspectRatio:2.5
       
     };

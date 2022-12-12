@@ -41,10 +41,9 @@ export class ChartjsLineComponent implements OnDestroy {
       ],
     };
 
-    this.options = this.options = {
-
-      aspectRatio: 2.5
-
+    this.options =  {
+      responsive: true,
+      maintainAspectRatio: false
     };
   }
 
